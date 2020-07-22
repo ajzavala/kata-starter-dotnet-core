@@ -11,11 +11,9 @@ namespace Kata
             if(string.IsNullOrEmpty(number))
                 return 0;
             
-            var numbers = number.Split(",");
+            var numbers = number.Split(",").Select(int.Parse);
 
-            if (numbers.Length>1) 
-                return Convert.ToInt32(numbers[0])+Convert.ToInt32(numbers[1]);
-            return Convert.ToInt32(numbers[0]);
+            return numbers.Sum();
         }
     }
 }
